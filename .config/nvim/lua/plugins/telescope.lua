@@ -23,7 +23,19 @@ return {
 				vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" }),
 				vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Find recent files" }),
 				vim.keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor in cwd" }),
-				vim.keymap.set("n", "<leader>fh", builtin.help_tags, {}),
+				vim.keymap.set(
+					"n",
+					"<leader>fl",
+					builtin.treesitter,
+					{ desc = "Lists Function names, variables, from Treesitter" }
+				),
+				vim.keymap.set(
+					"n",
+					"<leader>fd",
+					builtin.lsp_definitions,
+					{ desc = "Find Definition on string under cursor" }
+				),
+				vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Lists available help tags" }),
 			},
 		})
 	end,
